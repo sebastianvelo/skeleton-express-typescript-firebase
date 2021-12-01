@@ -1,5 +1,5 @@
 enum Resource {
-    LAYOUT = '/layout'
+    DEMO = "/"
 }
 
 export default Resource;

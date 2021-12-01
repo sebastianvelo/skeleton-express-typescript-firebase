@@ -1,15 +1,15 @@
 import { Request, Response } from "express";
 import Controller from "../../common/controller/Controller";
 import Resource from "../../config/Resource";
-import LayoutService from "../../service/layout/LayoutService";
+import DemoService from "../../service/demo/DemoService";
 
-class LayoutController extends Controller {
-  resource: Resource = Resource.LAYOUT;
+class DemoController extends Controller {
+  resource: Resource = Resource.DEMO;
 
   setEndpoints() {
     this.setEndpoint("/").get((req: Request, res: Response) => {
-      LayoutService.getLayout().then((layout) => {
-        res.send(layout);
+      DemoService.getDemo().then((item) => {
+        res.send(item);
       });
     });
 
@@ -17,4 +17,4 @@ class LayoutController extends Controller {
   }
 }
 
-export default LayoutController;
+export default DemoController;
